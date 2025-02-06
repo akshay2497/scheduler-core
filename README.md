@@ -103,6 +103,8 @@ Consumer service :
 Producer API CURL'S :
 
 1. API EVENT
+
+```BASH
 curl --location 'localhost:9001/core/api/v1/scheduler/schedule' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -115,8 +117,11 @@ curl --location 'localhost:9001/core/api/v1/scheduler/schedule' \
     "payload": "{\"key\":\"value\"}"
 }
 '
+```
 
 2. Kafka Event
+
+```BASH
 curl --location 'localhost:9001/core/api/v1/scheduler/schedule' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -129,8 +134,11 @@ curl --location 'localhost:9001/core/api/v1/scheduler/schedule' \
     "kafkaPayload": "{\"order_id\": 123}"
 }
 '
+```
 
 3. RabbitMq Event
+
+```BASH
 curl --location 'localhost:9001/core/api/v1/scheduler/schedule' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -143,6 +151,7 @@ curl --location 'localhost:9001/core/api/v1/scheduler/schedule' \
     "rabbitMqPayload": "{\"order_id\": 123}"
 }
 '
+```
 
 
 
