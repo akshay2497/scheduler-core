@@ -18,6 +18,8 @@ Solution
 2. Database schema
 
 api_call_events;
+
+```SQL
 CREATE TABLE `api_call_events` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `api_url` longtext NOT NULL,
@@ -29,8 +31,11 @@ CREATE TABLE `api_call_events` (
   `updated_at` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+```
 
 kafka_events;
+
+```SQL
 CREATE TABLE `kafka_events` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `created_at` datetime(6) DEFAULT NULL,
@@ -42,8 +47,11 @@ CREATE TABLE `kafka_events` (
   `updated_at` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+```
 
 rabbitmq_events;
+
+```SQL
 CREATE TABLE `rabbitmq_events` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `created_at` datetime(6) DEFAULT NULL,
@@ -55,8 +63,11 @@ CREATE TABLE `rabbitmq_events` (
   `updated_at` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+```
 
 event_schedules;
+
+```SQL
 CREATE TABLE `event_schedules` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `created_at` datetime(6) DEFAULT NULL,
@@ -78,6 +89,7 @@ CREATE TABLE `event_schedules` (
   CONSTRAINT `FKlmwktk502n3b4sy7rw1y596wc` FOREIGN KEY (`kafka_event_id`) REFERENCES `kafka_events` (`id`),
   CONSTRAINT `FKrkfx6ccyblhiyxx4tcvrkh82i` FOREIGN KEY (`api_call_event_id`) REFERENCES `api_call_events` (`id`)
 );
+```
 
 
 Producer service :
